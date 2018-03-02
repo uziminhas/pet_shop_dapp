@@ -2,8 +2,9 @@ pragma solidity ^0.4.17;
 
 contract Adoption {
 
-	address[16] public adopters; 
 	//an array of Ethereum addresses
+	//public variables have automatic getter methods
+	address[16] public adopters; 
 
 	/**
 	Solidity requires defining the return type of a function in ()
@@ -12,13 +13,13 @@ contract Adoption {
 	// Adopting a pet
 	function adopt(uint petId) public returns (uint) { 
 
-	require(petId >= 0 && petId <= 15); 
-	//ensure the pet ID is within range
+		require(petId >= 0 && petId <= 15); 
+		//ensure the pet ID is within range
 
-	adopters[petId] = msg.sender; 
-	//the address of the person or smart contract who called this function
+		adopters[petId] = msg.sender; 
+		//the address of the person or smart contract who called this function
 
-	return petId;
+		return petId;
 
 	}
 
